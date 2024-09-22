@@ -50,11 +50,12 @@ Before running the pipeline, make sure that the following dependencies and tools
 ```
 #### 2. Install Cell Ranger
 
-1. Download and unpack the cellranger .tar.gz/.tar.xz from the 10xgenomics website: https://www.10xgenomics.com/support/software/cell-ranger/downloads
+1. Download and unpack the cellranger `cellranger-x.y.z.tar.gz/.tar.xz` compressed folder from the 10xgenomics website: https://www.10xgenomics.com/support/software/cell-ranger/downloads
 
 2. Add Cell Ranger to your PATH
-    `export PATH=/file-location:$PATH`
-
+```
+`export PATH=/file-location:$PATH`
+```
 
 #### 3. Install FastQC 
 Using conda:
