@@ -33,17 +33,21 @@ Before running the pipeline, make sure that the following dependencies and tools
 #### 1. Install Nextflow
 
 1. Install Nextflow
+```
 `curl -s https://get.nextflow.io | bash`
-
+```
 2. Make Nextflow executable
+```
 `chmod +x nextflow`
-
+```
 3. Move Nextflow into an executable path:
+```
 `sudo mv nextflow /usr/local/bin`     
- 
+ ```
 4. Confirm that Nextflow is installed correctly" 
+```
 `nextflow info`
-
+```
 #### 2. Install Cell Ranger
 
 1. Download and unpack the cellranger .tar.gz/.tar.xz from the 10xgenomics website: https://www.10xgenomics.com/support/software/cell-ranger/downloads
