@@ -34,19 +34,19 @@ Before running the pipeline, make sure that the following dependencies and tools
 
 1. Install Nextflow
 ```
-`curl -s https://get.nextflow.io | bash`
+curl -s https://get.nextflow.io | bash
 ```
 2. Make Nextflow executable
 ```
-`chmod +x nextflow`
+chmod +x nextflow
 ```
 3. Move Nextflow into an executable path:
 ```
-`sudo mv nextflow /usr/local/bin`     
+sudo mv nextflow /usr/local/bin     
  ```
 4. Confirm that Nextflow is installed correctly" 
 ```
-`nextflow info`
+nextflow info
 ```
 #### 2. Install Cell Ranger
 
@@ -54,13 +54,13 @@ Before running the pipeline, make sure that the following dependencies and tools
 
 2. Add Cell Ranger to your PATH
 ```
-`export PATH=/file-location:$PATH`
+export PATH=/file-location:$PATH
 ```
 
 #### 3. Install FastQC 
 Using conda:
 ```bash
-`conda install bioconda::fastqc`
+conda install bioconda::fastqc
 ```
 
 Using apt install:
@@ -74,12 +74,12 @@ Using apt install:
 Using conda:
 
 ```bash
-`conda install multiqc`
+conda install multiqc
 ```
 
 Using apt install:
 ```bash
-`sudo apt-get install multiqc`
+sudo apt-get install multiqc
 ```
 
 ### Alternative: Create a conda environment to manage dependencies:
