@@ -5,7 +5,7 @@ process CELLRANGER_COUNT {
     input:
         tuple path(reads),path(libraries),path(genome),val(sample_id)
     output:
-        path(outdir) into cellranger_count
+        path cellranger_count
 
     script:
     """

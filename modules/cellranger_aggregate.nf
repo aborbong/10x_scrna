@@ -2,7 +2,7 @@
 
 https://www.10xgenomics.com/support/software/cell-ranger/latest/analysis/running-pipelines/cr-3p-aggr
 
-process CELLRANGER_MULTI {
+process CELLRANGER_AGGR {
 
     input:
         tuple path(reads), path(libraries)
