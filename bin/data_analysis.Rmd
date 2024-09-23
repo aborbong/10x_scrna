@@ -1,0 +1,14 @@
+---
+title: Data processing of cellranger count results
+---
+
+
+```{r Quality control}
+#This step includes two stages of filtering: Cell filtering, and Gene filtering. For the first step, it filters out low-quality cells based on the following parameters: 
+#1. Number of detected genes
+#2. Percentage of mitochondrial genes
+#3. Total UMI (Unique Molecular Identifier) counts
+
+#For the second filtering-stage, genes with a low prevalence of expression across cells will be filtered out to reduce noise
+```
+
