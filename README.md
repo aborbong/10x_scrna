@@ -27,6 +27,7 @@ Before running the pipeline, make sure that the following dependencies and tools
 2. Cell ranger: See more in https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/installation
 3. FastQC: See more in 
 4. MultiQC: See more in https://multiqc.info/docs/getting_started/installation/ 
+5. R version 4.3.1 or higher
 
 ### Installing dependencies
 
@@ -82,9 +83,47 @@ Using apt install:
 sudo apt-get install multiqc
 ```
 
+#### 5. Install R
+Using conda: 
+```bash
+conda install r-base r-dev
+```
+Execute R and install the following packages: 
+```bash
+install.packages("Seurat")
+install.packages("cowplot")
+install.packages("ggplot2")
+```
+
 ### Alternative: Create a conda environment to manage dependencies:
 
 ```bash
-conda create -n scrna-seq-pipeline -c bioconda nextflow fastqc multiqc trimmomatic
+conda create -n scrna-seq-pipeline -c bioconda nextflow fastqc multiqc trimmomatic r-base r-dev r-Seurat r-cowplot 
 conda activate scrna-seq-pipeline
+```
+
+# Preparing input files
+
+### Input files
+
+The FASTQ files must be located in the `data/reads` folder, and the path to the folder can be specified in the --reads parameter in the `neflow.config` file
+
+### Naming your input FASTQ files
+This pipeline requires the input files in .FASTQ format and following 10X naming convention:
+`[Sample Name]_S1_L00[Lane Number]_[Read Type]_001.fastq.gz`
+
+where ```Read Type``` is one of:
+    I1: Sample index read (optional)
+    I2: Sample index read (optional)
+    R1: Read 1
+    R2: Read 2
+
+### Reference transcriptome
+
+The indexed human transcriptome is provided in the `data/ref` folder. For custom genomes, the indexed reference genome can be generated via:
+
+# Running the pipeline
+
+```bash
+nextflow run main.nf --input 
 ```
