@@ -1,0 +1,26 @@
+{
+    "id": "332F48F2",
+    "path": "~/Documents/10x_scrna/bin/data_analysis.Rmd",
+    "project_path": "data_analysis.Rmd",
+    "type": "r_markdown",
+    "hash": "3055393639",
+    "contents": "",
+    "dirty": false,
+    "created": 1727006816981.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "14,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1727040274,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1727040274533,
+    "read_only": false,
+    "read_only_alternatives": []
+}
