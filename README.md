@@ -106,7 +106,7 @@ conda activate scrna-seq-pipeline
 
 ### Input files
 
-The FASTQ files must be located in the `data/reads` folder, and the path to the folder can be specified in the --reads parameter in the `neflow.config` file
+The FASTQ files must be located in the `data/reads` folder. Alternatively, the path to the reads-containing folder can be changed in the nextflow.config file, replacing the argument `reads = "$PWD/data/reads/_*R{1,2}_.fastq.gz"` with the path where the reads are located
 
 ### Naming your input FASTQ files
 This pipeline requires the input files in .FASTQ format and following 10X naming convention:
@@ -122,9 +122,12 @@ where ```Read Type``` is one of:
 
 ### Reference transcriptome
 
-The indexed transcriptome must be provided in the `data/ref` folder. For custom genomes, the indexed reference genome can be generated via: 
+The indexed transcriptome must be provided in the `data/ref` folder. The human and mice cellranger-compatible transcriptomes are available to download here: https://www.10xgenomics.com/support/software/cell-ranger/downloads
+
 
 # Running the pipeline
+
+Run the following command to execute the pipeline:
 
 ```bash
 nextflow run main.nf
