@@ -113,17 +113,19 @@ This pipeline requires the input files in .FASTQ format and following 10X naming
 `[Sample Name]_S1_L00[Lane Number]_[Read Type]_001.fastq.gz`
 
 where ```Read Type``` is one of:
+```bash
     I1: Sample index read (optional)
     I2: Sample index read (optional)
     R1: Read 1
     R2: Read 2
+```
 
 ### Reference transcriptome
 
-The indexed human transcriptome is provided in the `data/ref` folder. For custom genomes, the indexed reference genome can be generated via:
+The indexed transcriptome must be provided in the `data/ref` folder. For custom genomes, the indexed reference genome can be generated via: 
 
 # Running the pipeline
 
 ```bash
-nextflow run main.nf --input 
+nextflow run main.nf
 ```
