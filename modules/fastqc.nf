@@ -9,7 +9,7 @@
         path reads
 
     output:
-        path '${params.outdir}/fastqc/*' into fastqc
+        path "${params.outdir}/fastqc/*" into fastqc
         
 
     """
