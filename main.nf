@@ -1,6 +1,5 @@
 #!/usr/bin/env nextflow
 
-
 /*-----------------------------
 // DEFINE DEFAULT PARAMETERS
 -----------------------------*/
@@ -9,10 +8,8 @@ params.projectDir = "$PWD/10x_scrna"
 params.transcriptome = "${params.projectDir}/data/ref/"
 params.reads = "${params.projectDir}/data/reads/_*R{1,2}_.fastq.gz"
 params.outdir = "${params.projectDir}/results"
-
-// Input reads
-//params.reads = "${params.projectDir}/data/samplesheet.csv"
-
+params.fastqc = "${params.outdir}/fastqc"
+params.cellranger_count = "${params.outdir}/cellranger_count"
 /*------------------
 // IMPORT MODULES
 -------------------*/
@@ -41,5 +38,5 @@ workflow {
     cellranger = CELLRANGER_COUNT(reads_ch)
 
     //Clustering analysis and visualization 
-    seurat = SEURAT(seurat_input)
+    seurat = SEURAT(cellranger)
 }
