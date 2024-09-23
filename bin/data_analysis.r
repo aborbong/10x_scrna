@@ -3,15 +3,19 @@ data_analysis_scrnaseq.R
 ##         Setup
 ###----------------------
 
-#Install required packages
-install.packages("Seurat")
-install.packages("ggplot2")
-install.packages("cowplot")
+#Required packages
+packages = c("Seurat","ggplot2","cowplot")
 
-#Load libraries
-library(Seurat)
-library(ggplot2)
-library(cowplot)
+#Function to install packages
+install.load.pkg <- function(package){
+  if(eval(parse(text=paste("require(",package,")")))) return(TRUE)
+  install.packages(package)
+  return(eval(parse(text=paste("require(",package,")"))))
+}
+
+#Install and load needed packages if not installed
+install.load.pkg(packages)
+
 
 #Import functions
 source("./bin/functions_data_analysis.r", chdir = TRUE)
