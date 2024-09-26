@@ -14,7 +14,7 @@ process CELLRANGER_COUNT {
 
         cellranger count --id=${sample_id} \
                          --transcriptome=${genome} \
-                         ##--sample=${sample_id} \
+                         --sample=${sample_id} \
                          --create-bam=true \
                          --fastqs=${reads} \
                          --localcores=8 \
