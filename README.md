@@ -120,7 +120,11 @@ where ```Read Type``` is one of:
 
 ### Reference transcriptome
 
-The reference transcriptome must be provided in the `data/ref` folder. The human and mice pre-built cellranger-compatible transcriptomes are available to download.
+The reference transcriptome must be provided in the `data/ref` folder. 
+
+The human and mice pre-built cellranger-compatible transcriptomes are available to download. 
+
+```transcriptome=${params.projectDir}/data/ref/refdata-gex-GRCh38-2024-A```
 
 Human reference (GRCh38)-2024-A:
 ```bash
@@ -130,8 +134,9 @@ Mouse reference (GRCm39)-2024-A:
 ```bash
 curl -O "https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCm39-2024-A.tar.gz"
 ```
+Make sure to decompress the folder and update the path in the nextflow.config file.
 
-Custom reference transcriptomes (non-human, non-mouse) can be generated using a reference genome sequence and gene annotations. To do so, use the cellranger_mkref.nf module
+Custom reference transcriptomes (non-human, non-mouse) can be generated using a reference genome sequence and gene annotations. To do so, use the ```cellranger_mkref.nf``` module
 
 # Running the pipeline
 
