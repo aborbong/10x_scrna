@@ -3,7 +3,7 @@
 process CELLRANGER_COUNT {
 
     input:
-        tuple val(sample_id),path(reads),path(genome)
+        tuple val(sample_id),path(reads),path(transcriptome)
     output:
        path cellranger_count
     script:
@@ -13,7 +13,7 @@ process CELLRANGER_COUNT {
         cd ${outdir}/cellranger_count
 
         cellranger count --id=${sample_id} \
-                         --transcriptome=${genome} \
+                         --transcriptome=${transcriptome} \
                          --sample=${sample_id} \
                          --create-bam=true \
                          --fastqs=${reads} \
