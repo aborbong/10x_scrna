@@ -9,8 +9,6 @@ Alignment of reads to a reference genome
 Gene quantification and UMI counting
 Generation of count matrices for downstream analysis*
 
-Note: Supports the analysis of multiple samples (running `cellranger multi`)
-
 #### 2. Secondary analysis (Cell Ranger & Seurat) 
 Data normalization
 Dimensionality reduction & cell clustering
@@ -98,7 +96,7 @@ install.packages("ggplot2")
 ### Alternative: Create a conda environment to manage dependencies:
 
 ```bash
-conda create -n scrna-seq-pipeline -c bioconda nextflow fastqc multiqc trimmomatic r-base r-dev r-Seurat r-cowplot 
+conda create -n scrna-seq-pipeline -c bioconda nextflow fastqc multiqc r-base r-dev r-Seurat r-cowplot 
 conda activate scrna-seq-pipeline
 ```
 
@@ -122,8 +120,18 @@ where ```Read Type``` is one of:
 
 ### Reference transcriptome
 
-The indexed transcriptome must be provided in the `data/ref` folder. The human and mice cellranger-compatible transcriptomes are available to download here: https://www.10xgenomics.com/support/software/cell-ranger/downloads
+The reference transcriptome must be provided in the `data/ref` folder. The human and mice pre-built cellranger-compatible transcriptomes are available to download.
 
+Human reference (GRCh38)-2024-A:
+```bash
+curl -O "https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2024-A.tar.gz"
+```
+Mouse reference (GRCm39)-2024-A:
+```bash
+curl -O "https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCm39-2024-A.tar.gz"
+```
+
+Custom reference transcriptomes (non-human, non-mouse) can be generated using a reference genome sequence and gene annotations. To do so, use the cellranger_mkref.nf module
 
 # Running the pipeline
 
