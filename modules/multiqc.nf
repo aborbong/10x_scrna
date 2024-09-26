@@ -7,13 +7,13 @@
 process MULTIQC {
 
     input:
-        path fastqc
+        path fastqc 
     
     output:
-        path '${params.outdir}/multiqc_final.html'
+        path "${params.outdir}/multiqc_report.html" 
 
     script:
     """
-        multiqc ${params.outdir}/fastqc -o ${params.outdir}
+        multiqc .
     """
 }
